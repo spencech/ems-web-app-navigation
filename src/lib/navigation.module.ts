@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NavigationComponent } from './cognito.component';
+import { NavigationComponent } from './navigation.component';
 import { CommonModule } from '@angular/common';
 
 

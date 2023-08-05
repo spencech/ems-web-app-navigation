@@ -11,14 +11,15 @@ export class NavigationService {
   public states$: Observable<INavigationState[]> = this.states.asObservable();
 
   private list: INavigationState[] = [];
-  private page: any;
+  private pageService!: any;
 
   constructor() {
-    //this.pageService.page.subscribe(p => this.page = p as Page);
+    
   }
 
-  public setCurrentPage(page: any) {
-    this.page = page;
+  public setPageService(pageService: any) {
+    this.pageService = pageService;
+    this.pageService.page.subscribe(p => this.page = p as Page);
   }
 
   public add(state: INavigationState) {
