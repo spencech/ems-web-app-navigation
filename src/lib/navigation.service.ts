@@ -25,9 +25,10 @@ export class NavigationService {
 
   public removeState(id: string) {
     const state = this.list.find(s => s.id === id);
-    const index = this.list.indexOf(state);
     if(!state) return;
-
+    const index = this.list.indexOf(state);
+    this.list.splice(index + 1);
+    this.states.next(this.list.concat());
   }
 
   public add(state: INavigationState) {
