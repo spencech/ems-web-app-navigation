@@ -23,6 +23,14 @@ export class NavigationService {
     this.pageService.page.subscribe((p: any) => this.page = p);
   }
 
+  public removeState(id: string) {
+    const state = this.states.find(s => s.id === id);
+    const index = this.list.indexOf(state);
+    if(!state) return;
+    this.list.splice(index + 1);
+    this.states.next(this.list.concat());
+  }
+
   public add(state: INavigationState) {
     const existing = this.list.find(s => s.id === state.id);
 
