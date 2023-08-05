@@ -12,6 +12,7 @@ export class NavigationService {
 
   private list: INavigationState[] = [];
   private pageService!: any;
+  private page:any;
 
   constructor() {
     
@@ -19,7 +20,7 @@ export class NavigationService {
 
   public setPageService(pageService: any) {
     this.pageService = pageService;
-    this.pageService.page.subscribe(p => this.page = p as Page);
+    this.pageService.page.subscribe(p => this.page = p);
   }
 
   public add(state: INavigationState) {
