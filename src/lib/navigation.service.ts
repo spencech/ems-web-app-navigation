@@ -32,7 +32,7 @@ export class NavigationService {
   }
 
   public add(state: INavigationState) {
-    const existing = this.list.find(s => s.id === state.id);
+    const existing = this.list.find((s: INavigationState) => s.id === state.id);
 
     if(existing) {
       const index = this.list.indexOf(existing);
