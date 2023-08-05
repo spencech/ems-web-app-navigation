@@ -27,7 +27,7 @@ export class NavigationService {
     const state = this.list.find(s => s.id === id);
     if(!state) return;
     const index = this.list.indexOf(state);
-    this.list.splice(index + 1);
+    this.list.splice(index,1);
     this.states.next(this.list.concat());
   }
 
