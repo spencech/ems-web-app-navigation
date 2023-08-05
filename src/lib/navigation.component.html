@@ -1,0 +1,8 @@
+<div class="navigation-container">
+	<ol class="ol">
+		<li *ngFor="let state of states">
+			<i class="fa-light fa-angle-right"></i>
+			<button class="a" (click)="goto(state)">{{ state.label }}</button>
+		</li>
+	</ol>
+</div>

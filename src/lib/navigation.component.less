@@ -1,0 +1,34 @@
+ol {
+	padding: 0.5rem 1.25rem;
+	background: white;
+	display: flex;
+	justify-content: flex-start;
+	list-style: none;
+
+	button {
+		font-size: 0.875rem;
+	}
+
+	li + li {
+		margin-left: 0.5rem;
+	}
+
+	li i {
+		margin-right: 0.5rem;
+	}
+
+	li button {
+		border-bottom: solid 1px #ccc;
+		cursor: pointer;
+	}
+
+	li:first-child i {
+		display: none;
+	};
+
+	li:last-child button {
+		border-bottom: 0;
+		cursor: default;
+		pointer-events: none;
+	}
+}
