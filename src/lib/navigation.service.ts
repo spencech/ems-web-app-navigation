@@ -20,7 +20,7 @@ export class NavigationService {
 
   public setPageService(pageService: any) {
     this.pageService = pageService;
-    this.pageService.page.subscribe(p => this.page = p);
+    this.pageService.page.subscribe((p: any) => this.page = p);
   }
 
   public add(state: INavigationState) {
