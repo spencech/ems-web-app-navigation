@@ -24,15 +24,14 @@ export class NavigationService {
   }
 
   public removeState(id: string) {
-    const state = this.states.find(s => s.id === id);
+    const state = this.list.find(s => s.id === id);
     const index = this.list.indexOf(state);
     if(!state) return;
-    this.list.splice(index + 1);
-    this.states.next(this.list.concat());
+
   }
 
   public add(state: INavigationState) {
-    const existing = this.list.find((s: INavigationState) => s.id === state.id);
+    const existing = this.list.find(s => s.id === state.id);
 
     if(existing) {
       const index = this.list.indexOf(existing);
