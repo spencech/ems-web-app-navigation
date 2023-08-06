@@ -2,23 +2,27 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
-## Code scaffolding
+## Module Implementation
 
-Run `ng generate component component-name --project navigation` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project navigation`.
-> Note: Don't forget to add `--project navigation` or else it will be added to the default project in your `angular.json` file. 
+	import { NgModule } from '@angular/core';
+	import { BrowserModule } from '@angular/platform-browser';
+	import { CommonModule } from '@angular/common';  
 
-## Build
+	import { AppComponent } from './app.component';
+	import { NavigationModule, NavigationService } from "ems-web-app-navigation";
+	import { PageViewerModule, PageViewerService } from "ems-web-app-page-viewer"; //necessary dependency
 
-Run `ng build navigation` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build navigation`, go to the dist folder `cd dist/navigation` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test navigation` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+	@NgModule({
+	  declarations: [
+	    AppComponent
+	  ],
+	  imports: [
+	    BrowserModule,
+	    CommonModule,
+	    NavigationModule,
+	    PageViewerModule
+	  ],
+	  providers: [ NavigationService, PageViewerService ],
+	  bootstrap: [ AppComponent ]
+	})
+	export class AppModule { }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, BehaviorSubject, throwError, of } from 'rxjs';
 import { INavigationState } from "./navigation.interfaces";
+import { PageViewerService } from "ems-web-app-page-viewer";
 
 @Injectable({
    providedIn: 'root'
@@ -11,10 +12,9 @@ export class NavigationService {
   public states$: Observable<INavigationState[]> = this.states.asObservable();
 
   private list: INavigationState[] = [];
-  private pageService!: any;
   private page:any;
 
-  constructor() {
+  constructor(private pageService: PageViewerService) {
     
   }
 
