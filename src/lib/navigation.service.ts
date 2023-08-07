@@ -45,7 +45,11 @@ export class NavigationService {
     this.states.next(this.list.concat());
   }
 
-  public goto(state: INavigationState) {
+  public goto(state: INavigationState | string) {
+    if(typeof state === "string") {
+      state = this.list.find(s => s.id === state);
+    } 
+    
     const index = this.list.indexOf(state);
     this.list.splice(index + 1);
     this.states.next(this.list.concat());
