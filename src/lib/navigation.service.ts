@@ -46,13 +46,15 @@ export class NavigationService {
   }
 
   public goto(input: INavigationState | string) {
-    let state: INavigationState
+    let state?: INavigationState
     
     if(typeof input === "string") {
       state = this.list.find(s => s.id === input);
     }  else {
       state = input as INavigationState;
     }
+
+    if(!state) return;
 
     const index = this.list.indexOf(state);
     this.list.splice(index + 1);
