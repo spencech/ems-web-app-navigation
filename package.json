@@ -1,6 +1,6 @@
 {
   "name": "ems-web-app-navigation",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "author": "Chris Spence (https://educationalmediasolutions.com)",
   "description": "This angular.io module includes a component, service and supporting classes that help to manage state in SPAs with nested views",
   "funding": "https://paypal.me/spencech",
