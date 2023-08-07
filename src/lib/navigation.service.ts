@@ -46,7 +46,7 @@ export class NavigationService {
   }
 
   public goto(input: INavigationState | string) {
-    let state?: INavigationState
+    let state: INavigationState | undefined;
     
     if(typeof input === "string") {
       state = this.list.find(s => s.id === input);
